@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GorillasTestAssignment</string>
+    <string name="label_no_data_available">No data available</string>
 </resources>

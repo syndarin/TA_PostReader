@@ -1,0 +1,19 @@
+query AllPosts($options: PageQueryOptions) {
+    posts(options: $options) {
+        data {
+            id
+            title
+            body
+            user {
+                name
+                username
+            }
+        }
+        links {
+            next {
+                page
+                limit
+            }
+        }
+    }
+}

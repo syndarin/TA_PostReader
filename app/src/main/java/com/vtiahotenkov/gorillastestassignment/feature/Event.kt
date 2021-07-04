@@ -1,0 +1,3 @@
+package com.vtiahotenkov.gorillastestassignment.feature
+
+interface Event
