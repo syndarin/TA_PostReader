@@ -35,5 +35,7 @@ class ModelsMapper(
                 contentItems
             }
         }
+
+        is PostListState.Error -> listOf(ErrorModel(eventListener, state.th, state.allowRetry))
     }
 }

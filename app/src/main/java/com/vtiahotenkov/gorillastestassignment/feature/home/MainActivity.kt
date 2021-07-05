@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity(), Router {
         setContentView(R.layout.activity_main)
 
         if (savedInstanceState == null) {
-            routeTo(Destination.PostsList)
+            routeTo(Destination.PostsList(addToBackStack = false))
         }
     }
 
@@ -23,7 +23,9 @@ class MainActivity : AppCompatActivity(), Router {
         with(supportFragmentManager.beginTransaction()) {
             val fragment = destination.createFragment()
             replace(R.id.container, fragment)
-            addToBackStack(fragment.javaClass.name)
+            if (destination.addToBackStack) {
+                addToBackStack(fragment.javaClass.name)
+            }
             commit()
         }
     }

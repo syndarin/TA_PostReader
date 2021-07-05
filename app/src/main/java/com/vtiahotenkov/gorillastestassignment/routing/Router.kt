@@ -9,15 +9,17 @@ interface Router {
     fun routeTo(destination: Destination)
 }
 
-sealed class Destination {
+sealed class Destination() {
 
     abstract fun createFragment(): Fragment
+    abstract val addToBackStack: Boolean
 
-    object PostsList : Destination() {
+    data class PostsList(override val addToBackStack: Boolean = true) : Destination() {
         override fun createFragment(): Fragment = PostListFragment()
     }
 
-    data class PostDetails(val post: Post): Destination() {
+    data class PostDetails(val post: Post, override val addToBackStack: Boolean = true) :
+        Destination() {
         override fun createFragment(): Fragment = PostDetailsFragment.newInstance(post)
     }
 }

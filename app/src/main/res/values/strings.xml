@@ -2,4 +2,7 @@
     <string name="app_name">Post reader</string>
     <string name="label_no_data_available">No data available</string>
     <string name="tpl_author">Authored by %1$s | %2$s</string>
+    <string name="message_io_exception">Are you online?</string>
+    <string name="message_other_exception">Unknown error, sorry</string>
+    <string name="label_retry">Retry</string>
 </resources>
