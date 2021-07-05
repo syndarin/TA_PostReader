@@ -21,9 +21,9 @@ import com.vtiahotenkov.gorillastestassignment.routing.Destination
 import com.vtiahotenkov.gorillastestassignment.routing.Router
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.Optional
-import kotlinx.coroutines.flow.collect
 import javax.inject.Inject
 import javax.inject.Provider
+import kotlinx.coroutines.flow.collect
 
 @AndroidEntryPoint
 class PostListFragment : Fragment(R.layout.posts_fragment) {

@@ -4,19 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="@dimen/spacing_02">
 
     <TextView
         android:id="@+id/textPostTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="@dimen/spacing_01"
+        android:textAppearance="@style/TextHeader"
         tools:text="Some title" />
 
     <TextView
         android:id="@+id/textPostContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAppearance="@style/TextBody"
         tools:text="Some content" />
 
 </LinearLayout>

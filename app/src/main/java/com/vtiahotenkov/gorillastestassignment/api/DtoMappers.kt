@@ -1,5 +1,6 @@
 package com.vtiahotenkov.gorillastestassignment.api
 
+import AllPostsQuery
 import com.vtiahotenkov.gorillastestassignment.repository.Author
 import com.vtiahotenkov.gorillastestassignment.repository.NextPage
 import com.vtiahotenkov.gorillastestassignment.repository.Post

@@ -9,20 +9,25 @@
         android:id="@+id/rootLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_02">
 
         <TextView
             android:id="@+id/textTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:textAppearance="@style/TextHeader"
             tools:text="Some title" />
 
         <TextView
             android:id="@+id/textAuthor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_01"
+            android:layout_marginBottom="@dimen/spacing_03"
             android:gravity="center"
+            android:textAppearance="@style/TextSubheader"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Autored by John Doe | johndoe1990" />
 
@@ -30,7 +35,8 @@
             android:id="@+id/textContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:gravity="start"
+            android:textAppearance="@style/TextBody"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Some long story" />
 

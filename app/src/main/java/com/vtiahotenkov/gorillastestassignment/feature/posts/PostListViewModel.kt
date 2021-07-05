@@ -8,12 +8,14 @@ import com.vtiahotenkov.gorillastestassignment.feature.posts.usecase.GetPosts
 import com.vtiahotenkov.gorillastestassignment.repository.NextPage
 import com.vtiahotenkov.gorillastestassignment.repository.Post
 import com.vtiahotenkov.gorillastestassignment.routing.Destination
-import com.vtiahotenkov.gorillastestassignment.routing.Router
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.*
-import kotlinx.coroutines.launch
 import javax.inject.Inject
-import javax.inject.Provider
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.onStart
+import kotlinx.coroutines.launch
 
 @HiltViewModel
 class PostListViewModel

@@ -9,7 +9,6 @@ import com.vtiahotenkov.gorillastestassignment.databinding.PostsItemContentItemB
 import com.vtiahotenkov.gorillastestassignment.feature.EventListener
 import com.vtiahotenkov.gorillastestassignment.feature.posts.ShowPostDetails
 import com.vtiahotenkov.gorillastestassignment.repository.Post
-import java.lang.StringBuilder
 
 class PostPreviewItemModel(
     private val post: Post,
@@ -24,7 +23,7 @@ class PostPreviewItemModel(
     override fun bind(view: Holder) {
         super.bind(view)
         with(view.binding) {
-            textPostTitle.text = post.id + ") " + post.title
+            textPostTitle.text = post.title
             textPostContent.text = with(StringBuilder(post.content)) {
                 setLength(contentCharsLimit)
                 append("\u2026")

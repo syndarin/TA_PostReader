@@ -1,9 +1,8 @@
 package com.vtiahotenkov.gorillastestassignment.feature.home
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.vtiahotenkov.gorillastestassignment.R
-import com.vtiahotenkov.gorillastestassignment.feature.posts.PostListFragment
 import com.vtiahotenkov.gorillastestassignment.routing.Destination
 import com.vtiahotenkov.gorillastestassignment.routing.Router
 import dagger.hilt.android.AndroidEntryPoint

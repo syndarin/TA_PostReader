@@ -5,11 +5,11 @@ import com.apollographql.apollo.ApolloClient
 import com.apollographql.apollo.api.toInput
 import com.apollographql.apollo.coroutines.toFlow
 import com.vtiahotenkov.gorillastestassignment.api.toDto
+import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.mapNotNull
 import type.PageQueryOptions
 import type.PaginateOptions
-import javax.inject.Inject
 
 class PostsRepository
 @Inject constructor(
