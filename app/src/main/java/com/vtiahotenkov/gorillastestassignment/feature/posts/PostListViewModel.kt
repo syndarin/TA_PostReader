@@ -7,10 +7,13 @@ import com.vtiahotenkov.gorillastestassignment.feature.EventListener
 import com.vtiahotenkov.gorillastestassignment.feature.posts.usecase.GetPosts
 import com.vtiahotenkov.gorillastestassignment.repository.NextPage
 import com.vtiahotenkov.gorillastestassignment.repository.Post
+import com.vtiahotenkov.gorillastestassignment.routing.Destination
+import com.vtiahotenkov.gorillastestassignment.routing.Router
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+import javax.inject.Provider
 
 @HiltViewModel
 class PostListViewModel
@@ -20,6 +23,9 @@ class PostListViewModel
 
     private val _viewStateFlow = MutableStateFlow<PostListState>(PostListState.NoData)
     val viewStateFlow: Flow<PostListState> = _viewStateFlow
+
+    private val _navigationFlow = MutableSharedFlow<Destination>(replay = 0)
+    val navigationFlow: Flow<Destination> = _navigationFlow
 
     private val _requestedPageFlow = MutableStateFlow(NextPage(1, ITEMS_PER_PAGE))
 
@@ -37,12 +43,14 @@ class PostListViewModel
         }
     }
 
-    override fun onEvent(event: Event) = when (event) {
-        is LoadNextPage -> _requestedPageFlow.value = event.page
-        is ShowPostDetails -> {
-            println("TODO: show ${event.post}")
+    override fun onEvent(event: Event) {
+        when (event) {
+            is LoadNextPage -> _requestedPageFlow.value = event.page
+            is ShowPostDetails -> viewModelScope.launch {
+                _navigationFlow.emit(Destination.PostDetails(event.post))
+            }
+            else -> error("Unexpected event: $event")
         }
-        else -> error("Unexpected event: $event")
     }
 
     companion object {

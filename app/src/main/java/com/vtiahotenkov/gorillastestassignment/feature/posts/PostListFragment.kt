@@ -17,6 +17,8 @@ import com.vtiahotenkov.gorillastestassignment.PostPreviewCharsLimit
 import com.vtiahotenkov.gorillastestassignment.R
 import com.vtiahotenkov.gorillastestassignment.databinding.PostsFragmentBinding
 import com.vtiahotenkov.gorillastestassignment.feature.posts.epoxy.ModelsMapper
+import com.vtiahotenkov.gorillastestassignment.routing.Destination
+import com.vtiahotenkov.gorillastestassignment.routing.Router
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.Optional
 import kotlinx.coroutines.flow.collect
@@ -67,6 +69,13 @@ class PostListFragment : Fragment(R.layout.posts_fragment) {
         viewLifecycleOwner.lifecycleScope.launchWhenResumed {
             viewModel.viewStateFlow.collect(::updateViewState)
         }
+        viewLifecycleOwner.lifecycleScope.launchWhenResumed {
+            viewModel.navigationFlow.collect(::onNavigationEvent)
+        }
+    }
+
+    private fun onNavigationEvent(destination: Destination) {
+        (requireActivity() as? Router)?.routeTo(destination)
     }
 
     private fun updateViewState(state: PostListState) {

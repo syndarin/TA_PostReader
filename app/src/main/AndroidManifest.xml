@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GorillasTestAssignment"
         android:name="App">
-        <activity android:name=".MainActivity" android:screenOrientation="fullSensor">
+        <activity android:name=".feature.home.MainActivity" android:screenOrientation="fullSensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

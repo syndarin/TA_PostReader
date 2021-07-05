@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">GorillasTestAssignment</string>
+    <string name="app_name">Post reader</string>
     <string name="label_no_data_available">No data available</string>
+    <string name="tpl_author">Authored by %1$s | %2$s</string>
 </resources>
