@@ -9,7 +9,7 @@ interface Router {
     fun routeTo(destination: Destination)
 }
 
-sealed class Destination() {
+sealed class Destination {
 
     abstract fun createFragment(): Fragment
     abstract val addToBackStack: Boolean
